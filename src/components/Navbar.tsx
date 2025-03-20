@@ -1,7 +1,11 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Button } from "./ui/button";
+import { User } from "lucide-react";
 
 const Navbar = () => {
+  const [connected, setConnected] = useState(false);
   return (
     <div className="bg-amber-200 flex items-center justify-between px-3">
       <div className="flex  p-2">
@@ -12,7 +16,11 @@ const Navbar = () => {
         </div>
       </div>
       <div>
-        <Button className="bg-blue-500">Commencer</Button>
+        {connected ? (
+          <User />
+        ) : (
+          <Button className="bg-blue-500">Commencer</Button>
+        )}
       </div>
     </div>
   );
